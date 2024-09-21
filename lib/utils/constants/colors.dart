@@ -46,7 +46,7 @@ class TColors {
   static const Color white = Color(0xFFFFFFFF);
 
   // Gradient Colors
-  static const Gradient linearGradient = LinearGradient(
+  static const Gradient linearGradient2 = LinearGradient(
       begin: Alignment(0.0, 0.0),
       end: Alignment(0.707, -0.707),
       colors: [
