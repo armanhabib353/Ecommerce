@@ -10,43 +10,48 @@ class TSearchContainer extends StatelessWidget {
     this.icon = Iconsax.search_normal,
     this.showBackground = true,
     this.showBorder = true,
+    this.onTap,
   });
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-            color: showBackground
-                ? dark
-                    ? TColors.dark
-                    : TColors.light
-                : Colors.transparent,
-            borderRadius: BorderRadius.circular(16),
-            border: showBorder ? Border.all(color: TColors.grey) : null),
-        child: Row(
-          children: [
-            Icon(
-              icon,
-              color: TColors.darkGrey,
-            ),
-            const SizedBox(width: 16),
-            Text(
-              text,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .apply(color: TColors.darkGrey),
-            )
-          ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+              color: showBackground
+                  ? dark
+                      ? TColors.dark
+                      : TColors.light
+                  : Colors.transparent,
+              borderRadius: BorderRadius.circular(16),
+              border: showBorder ? Border.all(color: TColors.grey) : null),
+          child: Row(
+            children: [
+              Icon(
+                icon,
+                color: TColors.darkGrey,
+              ),
+              const SizedBox(width: 16),
+              Text(
+                text,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .apply(color: TColors.darkGrey),
+              )
+            ],
+          ),
         ),
       ),
     );
