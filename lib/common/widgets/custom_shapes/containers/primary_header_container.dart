@@ -18,10 +18,10 @@ class TPrimaryHeaderContainer extends StatelessWidget {
         color: TColors.primary,
         padding: const EdgeInsets.all(0),
 
-//Todo: if (size.isFinit': is not true.in stack] error occurred -> Read README.md file at)
+        //Todo: if (size.isFinit': is not true.in stack] error occurred -> Read README.md file at)
 
         child: SizedBox(
-          height: 400,
+          height: MediaQuery.of(context).size.height * 0.45,
           child: Stack(
             children: [
               //Todo: --- Background Custom Shapes
