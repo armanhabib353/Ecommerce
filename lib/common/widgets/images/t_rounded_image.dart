@@ -1,4 +1,4 @@
-import 'package:ecommerce/utils/constants/colors.dart';
+import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TRoundedImage extends StatelessWidget {
@@ -9,7 +9,7 @@ class TRoundedImage extends StatelessWidget {
     required this.imageUrl,
     this.applyImageRadius = true,
     this.border,
-    this.backgroundColor = TColors.light,
+    this.backgroundColor, //Todo:-  = Colors.white
     this.fit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,
@@ -21,7 +21,7 @@ class TRoundedImage extends StatelessWidget {
   final String imageUrl;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
@@ -30,6 +30,7 @@ class TRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onPressed,
       child: Container(
@@ -37,10 +38,10 @@ class TRoundedImage extends StatelessWidget {
         width: width,
         padding: padding,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          border: border,
-          color: backgroundColor,
-        ),
+            borderRadius: BorderRadius.circular(borderRadius),
+            border: border,
+            // color: backgroundColor,
+            color: dark ? Colors.grey : Colors.white),
         child: ClipRRect(
             borderRadius: applyImageRadius
                 ? BorderRadius.circular(borderRadius)

@@ -4,6 +4,7 @@ import 'package:ecommerce/common/widgets/icons/arman_circular_icon.dart';
 import 'package:ecommerce/common/widgets/images/t_rounded_image.dart';
 import 'package:ecommerce/common/widgets/texts/product_price_text.dart';
 import 'package:ecommerce/common/widgets/texts/product_title_text.dart';
+import 'package:ecommerce/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
@@ -23,20 +24,21 @@ class TProdctCardVertical extends StatelessWidget {
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-            boxShadow: [
-              TShadowsStyle.horizontalProductShadow
-            ],
+            boxShadow: [TShadowsStyle.horizontalProductShadow],
             borderRadius: BorderRadius.circular(16),
-            // color: dark ? const Color.fromARGB(255, 78, 167, 140) : TColors.white,
-            color:
-                dark ? const Color.fromARGB(255, 49, 151, 126) : TColors.white),
+            color: dark
+                ? TColors.darkerGrey
+                : TColors.white), // this color change full body color
         child: Column(
           children: [
             //TOdo: -- 1 ---- Thumbnail, wishlist button, discount tag
             TRoundedContainer(
               height: 180,
               padding: const EdgeInsets.all(8),
-              backgroundColor: dark ? TColors.dark : TColors.light,
+              backgroundColor: dark
+                  ? TColors.dark
+                  : const Color.fromARGB(255, 218, 218,
+                      218), // this background changes the image border color
               child: Stack(
                 children: [
                   //Todo: sub 1 - Thumbail Image
@@ -82,58 +84,51 @@ class TProdctCardVertical extends StatelessWidget {
             const SizedBox(height: 2),
 
             //Todo: -- 2---- Details
-            Padding(
-              padding: const EdgeInsets.only(left: 16, right: 4),
+            const Padding(
+              padding: EdgeInsets.only(left: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TProductTitleText(
+                  TProductTitleText(
                       title: "Green Nike Air Shoes", smallSize: true),
-                  const SizedBox(height: 2),
-                  Row(
-                    children: [
-                      Text("Nike",
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: Theme.of(context).textTheme.labelMedium),
-                      const SizedBox(width: 4),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: 12,
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      //Todo -- price show
-                      const TProductPriceText(price: '40'),
-
-                      //Todo -- add button
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: TColors.dark,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(12),
-                              bottomRight: Radius.circular(16),
-                            )),
-                        child: const SizedBox(
-                          height: 35,
-                          width: 35,
-                          child: Center(
-                            child: Icon(
-                              Iconsax.add,
-                              color: TColors.white,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                  SizedBox(height: 2),
+                  TBrandTitleWithVerifiedIcon(title: "Nike"),
                 ],
               ),
-            )
+            ),
+
+            //Todo: Add Spacer() here to keep the height of each BOX samein case 1 or 2 lines of headings
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //Todo -- price show
+                const Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: TProductPriceText(price: '40'),
+                ),
+
+                //Todo -- add button
+                Container(
+                  decoration: const BoxDecoration(
+                      color: TColors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(16),
+                      )),
+                  child: const SizedBox(
+                    height: 35,
+                    width: 35,
+                    child: Center(
+                      child: Icon(
+                        Iconsax.add,
+                        color: TColors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
