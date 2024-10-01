@@ -86,19 +86,24 @@ class TProdctCardVertical extends StatelessWidget {
             //Todo: -- 2---- Details
             const Padding(
               padding: EdgeInsets.only(left: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TProductTitleText(
-                      title: "Green Nike Air Shoes", smallSize: true),
-                  SizedBox(height: 2),
-                  TBrandTitleWithVerifiedIcon(title: "Nike"),
-                ],
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TProductTitleText(
+                        title: "Green Nike Air Shoes", smallSize: true),
+                    SizedBox(height: 2),
+                    TBrandTitleWithVerifiedIcon(title: "Nike"),
+                  ],
+                ),
               ),
             ),
 
             //Todo: Add Spacer() here to keep the height of each BOX samein case 1 or 2 lines of headings
             const Spacer(),
+
+            //Todo: -- Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

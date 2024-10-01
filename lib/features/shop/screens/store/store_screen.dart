@@ -35,35 +35,33 @@ class StoreScreen extends StatelessWidget {
                       : Colors.white,
                   expandedHeight: 440,
                   flexibleSpace: Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: [
-                        //Todo: Search Bar
-                        const SizedBox(height: 16),
-                        const TSearchContainer(
-                            text: 'text',
-                            showBorder: true,
-                            showBackground: false,
-                            padding: EdgeInsets.zero),
-                        const SizedBox(height: 32),
+                      padding: const EdgeInsets.all(24),
+                      child: ListView(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          children: [
+                            //Todo: Search Bar
+                            const SizedBox(height: 16),
+                            const TSearchContainer(
+                                text: 'text',
+                                showBorder: true,
+                                showBackground: false,
+                                padding: EdgeInsets.zero),
+                            const SizedBox(height: 32),
 
-                        //Todo: Featured Brands
-                        TSectionHeading(
-                            title: "Featured Brands", onPressed: () {}),
-                        const SizedBox(height: 16 / 1.5),
+                            //Todo: Featured Brands
+                            TSectionHeading(
+                                title: "Featured Brands", onPressed: () {}),
+                            const SizedBox(height: 16 / 1.5),
 
-                        TGridLayout(
-                            itemCount: 4,
-                            mainAxisExtent: 80,
-                            itemBuilder: (_, index) {
-                              //Todo: in the Backend Tutorial we will pas the Each brand & onPressed Event Also
-                              return const TBrandCard();
-                            })
-                      ],
-                    ),
-                  ),
+                            TGridLayout(
+                                itemCount: 4,
+                                mainAxisExtent: 80,
+                                itemBuilder: (_, index) {
+                                  //Todo: in the Backend Tutorial we will pas the Each brand & onPressed Event Also
+                                  return const TBrandCard();
+                                })
+                          ])),
                   //Todo: Tabs --
                   bottom: const TTabBar(tabs: [
                     Tab(child: Text('Sports')),
@@ -75,24 +73,22 @@ class StoreScreen extends StatelessWidget {
             ];
           },
           //Todo: body
-          body: const TabBarView(
-            children: [
-              //Todo: - Sports Tab
-              TCategoryTab(),
+          body: const TabBarView(children: [
+            //Todo: - Sports Tab
+            TCategoryTab(),
 
-              //Todo: -  Furniture Tab
-              TCategoryTab(),
+            //Todo: -  Furniture Tab
+            TCategoryTab(),
 
-              //Todo: -  Electronics Tab
-              TCategoryTab(),
+            //Todo: -  Electronics Tab
+            TCategoryTab(),
 
-              //Todo: -  Clothes Tab
-              TCategoryTab(),
+            //Todo: -  Clothes Tab
+            TCategoryTab(),
 
-              //Todo: - Cosmetics Tab
-              TCategoryTab(),
-            ],
-          ),
+            //Todo: - Cosmetics Tab
+            TCategoryTab(),
+          ]),
         ),
       ),
     );
