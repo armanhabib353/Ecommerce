@@ -16,9 +16,12 @@ class THomeCategories extends StatelessWidget {
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
-            return const TVerticalImageText(
-              image: TImages.shoeIcon,
-              title: 'Shoes',
+            return Padding(
+              padding: EdgeInsets.only(left: index == 0 ? 12 : 0),
+              child: const TVerticalImageText(
+                image: TImages.shoeIcon,
+                title: 'Shoes',
+              ),
             );
           }),
     );

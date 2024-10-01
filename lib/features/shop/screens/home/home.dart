@@ -1,4 +1,4 @@
-import 'package:ecommerce/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:ecommerce/common/widgets/custom_shapes/containers/primary_header_container_2.dart';
 import 'package:ecommerce/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:ecommerce/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce/common/widgets/products/products_cards/product_card_vertical.dart';
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             //Todo: Header --
-            const TPrimaryHeaderContainer(
+            const T2PrimaryHeaderContainer(
               child: Column(
                 children: [
                   //Todo: Appbar
@@ -44,12 +44,12 @@ class HomeScreen extends StatelessWidget {
                           textColor: Colors.white,
                         ),
                         SizedBox(height: 16),
-
-                        //TOdo: Categories
-                        THomeCategories(),
                       ],
                     ),
                   ),
+                  //TOdo: Popular Categories
+                  THomeCategories(),
+                  SizedBox(height: 32),
                 ],
               ),
             ),
