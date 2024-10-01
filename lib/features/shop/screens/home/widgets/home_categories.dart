@@ -17,7 +17,7 @@ class THomeCategories extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
             return Padding(
-              padding: EdgeInsets.only(left: index == 0 ? 12 : 0),
+              padding: EdgeInsets.only(left: index == 0 ? 16 : 0),
               child: const TVerticalImageText(
                 image: TImages.shoeIcon,
                 title: 'Shoes',
