@@ -96,6 +96,7 @@ class TProductAttributes extends StatelessWidget {
             )
           ],
         ),
+        const SizedBox(height: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
