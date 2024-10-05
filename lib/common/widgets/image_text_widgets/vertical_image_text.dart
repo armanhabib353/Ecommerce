@@ -1,4 +1,4 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
@@ -17,7 +17,8 @@ class TVerticalImageText extends StatelessWidget {
   final String image, title;
   final Color textColor;
   final Color? backgroundColor;
-  final Void Function()? onTap;
+  // final Void Function()? onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
