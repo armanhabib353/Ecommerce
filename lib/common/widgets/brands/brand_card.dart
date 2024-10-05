@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:ecommerce/common/widgets/container/rounded_container.dart';
 import 'package:ecommerce/common/widgets/images/t_circular_image.dart';
 import 'package:ecommerce/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
@@ -18,7 +16,8 @@ class TBrandCard extends StatelessWidget {
   });
 
   final bool showBorder;
-  final Void Function()? onTap;
+  // final Void Function()? onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
